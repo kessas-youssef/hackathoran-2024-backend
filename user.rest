@@ -1,0 +1,58 @@
+# Users
+
+GET http://localhost:3030/api/users
+
+###
+
+POST http://localhost:3030/api/addUser
+Content-Type: application/json
+
+{
+    "name": "Nadir Kessas",
+    "age": 26,
+    "level": "beginner",
+    "email": "user2@gmail.com",
+    "date": "2023-12-10T10:23:55.312Z",
+    "phone": "0779504426"
+}
+
+###
+
+POST http://localhost:3030/api/addAdmin
+Content-Type: application/json
+
+{
+    "adminEmail": "ara@gmal.com",
+    "userEmail": "auth@gmail.com"
+}
+
+
+###
+DELETE http://localhost:3030/api/deleteUser
+Content-Type: application/json
+
+{
+    "adminEmail":"auth1@gmail.com",
+    "userEmail":"auth2@gmail.com"
+}
+
+
+###
+DELETE http://localhost:3030/api/deleteAll
+
+### Auth
+POST http://localhost:3030/api/auth/registerAdmin
+Content-Type: application/json
+
+{
+    "email":"auth@gmail.com",
+    "password":"auth"
+}
+### 
+POST http://localhost:3030/api/auth/loginAdmin
+Content-Type: application/json
+
+{
+    "email":"auth2@gmail.com",
+    "password":"auth"
+}
