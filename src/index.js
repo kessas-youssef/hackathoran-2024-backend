@@ -6,6 +6,7 @@ require('./database/index')
 const {errorMiddleware } = require('./utils/helpers')
 
 const app = express()
+const PORT = process.env.PORT || 3030
 
 
 app.use(express.json());
@@ -14,4 +15,4 @@ app.use(cors())
 app.use('/api', usersRoute)
 
 app.use(errorMiddleware)
-app.listen(3030, () => console.log('Server running'))
+app.listen(PORT, () => console.log('Server running on port ' + PORT))

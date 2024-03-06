@@ -15,7 +15,7 @@ function errorMiddleware(error, req, res, next) {
         return res.status(500).send(error.message)
 
     console.log(error.message);
-    return res.status(error.status).send({message: error.message, isError: true})
+    return res.status(error.status).send({message: error.message, isError: true, content: error.content || null})
 }
 
 module.exports = {

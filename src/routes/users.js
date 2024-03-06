@@ -22,7 +22,7 @@ router.post('/addUser', validateRequestBody, async (req, res, next) => {
 
         const isUserExists = await User.findOne({ email: req.body.email })
         if (isUserExists)
-            throw { message: 'Already existing', status: 409 }
+            throw { message: 'Already existing', content: {...isUserExists}, status: 409 }
 
         const user = new User({ ...req.body })
         const savedUser = await user.save();
